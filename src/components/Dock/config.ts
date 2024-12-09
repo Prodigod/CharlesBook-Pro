@@ -1,6 +1,7 @@
 export type DockItem = {
   id: string;
   displayName: string;
+  widget?: any;
   iconLocation: any;
   enabled: boolean;
   link?: string; // Optional for items with links
@@ -38,11 +39,20 @@ export const dockConfig: DockItem[] = [
     enabled: true,
   },
   {
-    id: "music",
-    displayName: "Music",
-    openFileId: "ride2dis",
-    iconLocation: require("../../resources/images/webp/applemusic.png"),
-    enabled: true,
+      id: "music",
+      displayName: "Music",
+      widget: `
+        <div style="left: 0; width: 100%; height: 450px; position: relative;">
+          <iframe
+            src="https://music.apple.com/us/artist/hi-rez/57895780"
+            style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;"
+            allowfullscreen
+            allow="encrypted-media; fullscreen; clipboard-write;"
+          ></iframe>
+        </div>
+      `,
+      iconLocation: require("../../resources/images/webp/applemusic.png"),
+      enabled: true
   },
   {
     id: "discord",

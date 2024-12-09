@@ -79,33 +79,6 @@ const DockIconImage = styled.img`
   }
 `;
 
-//add this later to neighbouring icons
-// .distance-1 {
-//   margin-bottom: 22px !important;
-
-//   .dock-icon {
-//     height: 70px;
-//     width: 69px;
-//   }
-// }
-
-// .distance-1.no-point {
-//   margin-bottom: 25px !important;
-// }
-
-// .distance-2 {
-//   margin-bottom: 14px !important;
-
-//   .dock-icon {
-//     height: 62px;
-//     width: 61px;
-//   }
-// }
-
-// .hovered.no-point {
-//   margin-bottom: 40px !important;
-// }
-
 const DockPoint = styled.div`
   height: 4px;
   width: 4px;
@@ -120,9 +93,10 @@ const DockPoint = styled.div`
 `;
 
 export default function DockItem({
-  key: id,
+  Key: id,
   displayName,
   iconLocation,
+  widget, // Add widget prop
   isActive,
   onHandleClick,
   handleMouseEnter,
@@ -130,11 +104,9 @@ export default function DockItem({
   dockItemIndex,
   itemHovered,
 }) {
-  //   const isActiveIcon  = itemHovered == dockItemIndex;
-
   return (
     <DockItemWrapper
-      onClick={() => onHandleClick(dockItemIndex)}
+      onClick={() => onHandleClick(dockItemIndex, widget)} // Pass widget on click
       onMouseEnter={() => handleMouseEnter(dockItemIndex)}
       onMouseLeave={handleMouseLeave}
     >

@@ -5,7 +5,6 @@ import { openApp, closeApp } from "../../containers/Apps/slice";
 import { openFile, closeFile } from "../../containers/Files/slice";
 
 import DockItem from "./DockItem";
-
 import { getDockConfig } from "./config";
 
 export const DockWrapper = styled.div`
@@ -30,12 +29,6 @@ export const DockWrapper = styled.div`
   z-index: 3000;
   height: 71px !important;
 
-  box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
-  font-family: inherit;
-  font-weight: 400;
-
   @media (max-width: 550px) {
     flex-direction: column;
     left: 0%;
@@ -51,69 +44,114 @@ export const DockWrapper = styled.div`
 export default function Dock({ allApps, allFiles }) {
   const dispatch = useDispatch();
   const dockConfig = getDockConfig();
-
   const [itemHovered, setItemHovered] = React.useState(-1);
+  const [widgetContent, setWidgetContent] = React.useState(null);
 
   React.useEffect(() => {
-    console.log("itemHovered");
-    console.log(itemHovered);
+    console.log("itemHovered:", itemHovered);
   }, [itemHovered]);
 
   const handleMouseEnter = (itemIndex) => {
     setItemHovered(itemIndex);
   };
 
-  const handleMouseLeave = (itemIndex) => {
+  const handleMouseLeave = () => {
     setItemHovered(-1);
   };
 
+  const closeWidget = () => {
+    setWidgetContent(null);
+  };
+
   return (
-    <DockWrapper>
-      {dockConfig.map((dockItem, index) => {
-        const { id, displayName, iconLocation, link, openFileId = null, openAppId } =
-          dockItem;
+    <>
+      <DockWrapper>
+        {dockConfig.map((dockItem, index) => {
+          const { id, displayName, iconLocation, link, openFileId = null, openAppId, widget } =
+            dockItem;
 
-        const isAppOpen = allApps[openAppId]?.open;
-        const isFileOpen = allFiles[openFileId]?.open;
+          const isAppOpen = allApps[openAppId]?.open;
+          const isFileOpen = allFiles[openFileId]?.open;
 
-        const onHandleClick = () => {
-          const isLink = link && !openFileId && !openAppId;
-          const isApp = !link && !openFileId && openAppId;
-          const isFile = openFileId !== undefined && !link && !openAppId;
+          const onHandleClick = () => {
+            const isLink = link && !openFileId && !openAppId && !widget;
+            const isApp = !link && !openFileId && openAppId;
+            const isFile = openFileId !== undefined && !link && !openAppId && !widget;
+            const isWidget = widget;
 
-          if (isLink) {
-            window.open(link, "_blank");
-          } else if (isApp) {
-            if (isAppOpen) {
-              dispatch(closeApp(openAppId));
+            if (isLink) {
+              window.open(link, "_blank");
+            } else if (isApp) {
+              if (isAppOpen) {
+                dispatch(closeApp(openAppId));
+              } else {
+                dispatch(openApp(openAppId));
+              }
+            } else if (isFile) {
+              if (isFileOpen) {
+                dispatch(closeFile(openFileId));
+              } else {
+                dispatch(openFile(openFileId));
+              }
+            } else if (isWidget) {
+              setWidgetContent(widget); // Display the widget
             } else {
-              dispatch(openApp(openAppId));
+              console.log("No icon action");
             }
-          } else if (isFile) {
-            if (isFileOpen) {
-              dispatch(closeFile(openFileId));
-            } else {
-              dispatch(openFile(openFileId));
-            }
-          } else {
-            console.log("No icon action");
-          }
-        };
+          };
 
-        return (
-          <DockItem
-            dockItemIndex={index}
-            key={`dock-item-${id}`}
-            displayName={displayName}
-            iconLocation={iconLocation}
-            isActive={isAppOpen || isFileOpen}
-            onHandleClick={onHandleClick}
-            handleMouseEnter={handleMouseEnter}
-            handleMouseLeave={handleMouseLeave}
-            itemHovered={itemHovered}
-          ></DockItem>
-        );
-      })}
-    </DockWrapper>
+          return (
+            <DockItem
+              dockItemIndex={index}
+              Key={`dock-item-${id}`}
+              displayName={displayName}
+              iconLocation={iconLocation}
+              isActive={isAppOpen || isFileOpen}
+              onHandleClick={onHandleClick}
+              handleMouseEnter={handleMouseEnter}
+              handleMouseLeave={handleMouseLeave}
+              itemHovered={itemHovered}
+              widget={widget}
+            />
+          );
+        })}
+      </DockWrapper>
+      {widgetContent && (
+        <div
+          style={{
+            position: "fixed",
+            top: "10%",
+            left: "10%",
+            width: "80%",
+            height: "80%",
+            backgroundColor: "white",
+            boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)",
+            zIndex: 5000,
+            borderRadius: "10px",
+            padding: "20px",
+            overflow: "hidden",
+          }}
+        >
+          <button
+            onClick={closeWidget}
+            style={{
+              position: "absolute",
+              top: "10px",
+              right: "10px",
+              background: "red",
+              color: "white",
+              border: "none",
+              borderRadius: "50%",
+              width: "30px",
+              height: "30px",
+              cursor: "pointer",
+            }}
+          >
+            ×
+          </button>
+          <div dangerouslySetInnerHTML={{ __html: widgetContent }} />
+        </div>
+      )}
+    </>
   );
 }

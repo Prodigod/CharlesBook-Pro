@@ -4,27 +4,27 @@ import calculateRandomPosition from "../../utils/helpers/calculateRandomPosition
 export const DEFAULT_FOLDER_ICON_LOCATION = "./assets/icons/folder_icon.png";
 
 const foldersItems = {
-  Main: {
-    id: "Main",
-    displayName: "Hi-Rez The Rapper",
-    open: false,
-    type: ItemTypes.folder,
-    iconLocation: DEFAULT_FOLDER_ICON_LOCATION,
-    defaultIconPosition: {x: 11, y: 16},
-    folderChildren: [
-      "xxx",
-      "castingCouch",
-      "iLikeTv",
-      "backShawty",
-      "nipSlip",
-      "property",
-       "sloppyToppy",
-      "bootydo",
-      "ohNo",
-     "preciousMemories",
-      "dessert"
-    ],
-  },
+  // Main: {
+  //   id: "Main",
+  //   displayName: "Hi-Rez The Rapper",
+  //   open: false,
+  //   type: ItemTypes.folder,
+  //   iconLocation: DEFAULT_FOLDER_ICON_LOCATION,
+  //   defaultIconPosition: {x: 11, y: 16},
+  //   folderChildren: [
+  //     "xxx",
+  //     "castingCouch",
+  //     "iLikeTv",
+  //     "backShawty",
+  //     "nipSlip",
+  //     "property",
+  //      "sloppyToppy",
+  //     "bootydo",
+  //     "ohNo",
+  //    "preciousMemories",
+  //     "dessert"
+  //   ],
+  // },
   // memes: {
   //   id: "memes",
   //   displayName: "memes",

@@ -35,7 +35,7 @@ export default function FolderContentInner({ thisFolderFiles }) {
             type,
             goToUrl,
           } = file;
-
+              
           const isLink = type === ItemTypes.link && goToUrl;
 
           const fileParent: any = Object.values(allFolders).filter(
