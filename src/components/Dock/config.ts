@@ -1,4 +1,14 @@
-export const dockConfig = [
+export type DockItem = {
+  id: string;
+  displayName: string;
+  iconLocation: any;
+  enabled: boolean;
+  link?: string; // Optional for items with links
+  openFileId?: string; // Optional for file-related items
+  openAppId?: string; // Optional for app-related items
+};
+
+export const dockConfig: DockItem[] = [
   {
     id: "finder",
     displayName: "Finder",
@@ -23,14 +33,15 @@ export const dockConfig = [
   {
     id: "buy",
     displayName: "Buy",
-    link: "https://jupiter-terminal.dexscreener.com/?inputMint=HLwEJQVzs7SvjXuXpBTRHaLp5S6uWoWTUhLjJxBfy1c7&outputMint=So11111111111111111111111111111111111111112",
-    iconLocation: require("../../resources/images/webp/solana.png"),
+    link: "https://www.google.com",
+    iconLocation: require("../../resources/images/webp/safari.png"),
     enabled: true,
   },
   {
     id: "music",
     displayName: "Music",
-    openFileId: "ride2dis",
+    //openFileId: "ride2dis",
+    link: "https://www.google.com/",
     iconLocation: require("../../resources/images/webp/applemusic.png"),
     enabled: true,
   },
@@ -64,6 +75,7 @@ export const dockConfig = [
   },
 ];
 
-export const getDockConfig = () => {
+export const getDockConfig = (): DockItem[] => {
   return dockConfig.filter((item) => item.enabled);
 };
+

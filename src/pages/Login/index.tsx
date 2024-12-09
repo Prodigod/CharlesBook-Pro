@@ -88,7 +88,7 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <BottomButtonsWrapper />
+        {/* <BottomButtonsWrapper />  */}
       </div>
     </div>
   );

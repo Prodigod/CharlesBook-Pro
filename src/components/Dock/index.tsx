@@ -70,7 +70,7 @@ export default function Dock({ allApps, allFiles }) {
   return (
     <DockWrapper>
       {dockConfig.map((dockItem, index) => {
-        const { id, displayName, iconLocation, link, openFileId, openAppId } =
+        const { id, displayName, iconLocation, link, openFileId = null, openAppId } =
           dockItem;
 
         const isAppOpen = allApps[openAppId]?.open;
@@ -79,7 +79,7 @@ export default function Dock({ allApps, allFiles }) {
         const onHandleClick = () => {
           const isLink = link && !openFileId && !openAppId;
           const isApp = !link && !openFileId && openAppId;
-          const isFile = !link && openFileId && !openAppId;
+          const isFile = openFileId !== undefined && !link && !openAppId;
 
           if (isLink) {
             window.open(link, "_blank");
