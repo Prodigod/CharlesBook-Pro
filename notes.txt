@@ -1,0 +1,20 @@
+-fix item content resize glitch
+-warning message on mobile
+-make pdf content scrollable
+-add resizable back on items content
+-dock to be dynamiclaly rendered from config file
+
+-randmize wallpaper ?
+-add games
+-check UI mac elements
+-pop up every buy
+-setp rpc
+-do img crack shop
+-change title,icon,description
+-eugene test easter egg
+-3d easter egg
+-research active polify projects
+-check on ajm
+-trello
+-check on browser games
+-show visitor count?

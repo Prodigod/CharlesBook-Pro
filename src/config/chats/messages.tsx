@@ -1,0 +1,93 @@
+import {
+  formatTimestampToDate,
+  formatTimestampToTime,
+} from "../../utils/helpers/date";
+
+//create a function to generate those ? (maybe with AI?)
+export const chatsDefaultMessages = {
+  trumpMessages: [
+    {
+      id: "dhshkdskds",
+      body: "hi",
+      audioUrl: null,
+      audioData: null,
+      timestamp: Date.now(),
+      messageStatus: "READ",
+      isOpponent: false,
+      formattedDate: formatTimestampToDate(Date.now()),
+      formattedTime: formatTimestampToTime(Date.now()),
+    },
+    {
+      id: "34334434dsds",
+      body: "what do you want crackhead?",
+      audioUrl: null,
+      audioData: null,
+      timestamp: Date.now(),
+      messageStatus: "READ",
+      isOpponent: true,
+      formattedDate: formatTimestampToDate(Date.now()),
+      formattedTime: formatTimestampToTime(Date.now()),
+    },
+  ],
+  dadMessages: [
+    {
+      id: "eweweew55",
+      body: "hi",
+      audioUrl: null,
+      audioData: null,
+      timestamp: Date.now(),
+      messageStatus: "READ",
+      isOpponent: true,
+      formattedDate: formatTimestampToDate(Date.now()),
+      formattedTime: formatTimestampToTime(Date.now()),
+    },
+    {
+      id: "4554fdfdfddf",
+      body: "hi dad can i have some cash",
+      audioUrl: null,
+      audioData: null,
+      timestamp: Date.now(),
+      messageStatus: "READ",
+      isOpponent: false,
+      formattedDate: formatTimestampToDate(Date.now()),
+      formattedTime: formatTimestampToTime(Date.now()),
+    },
+    {
+      id: "44488gffss",
+      body: "cmon man..",
+      audioUrl: null,
+      audioData: null,
+      timestamp: Date.now(),
+      messageStatus: "READ",
+      isOpponent: true,
+      formattedDate: formatTimestampToDate(Date.now()),
+      formattedTime: formatTimestampToTime(Date.now()),
+    },
+  ],
+  parabolicMessages: [
+    {
+      id: "dddsss",
+      body: "whats up",
+      audioUrl: null,
+      audioData: null,
+      timestamp: Date.now(),
+      messageStatus: "READ",
+      isOpponent: true,
+      formattedDate: formatTimestampToDate(Date.now()),
+      formattedTime: formatTimestampToTime(Date.now()),
+    },
+  ],
+  zuckMessages: [
+    {
+      id: "zuck1mejsjs",
+      body: "hi",
+      audioUrl: null,
+      audioData: null,
+      timestamp: Date.now(),
+      messageStatus: "READ",
+      isOpponent: false,
+      formattedDate: formatTimestampToDate(Date.now()),
+      formattedTime: formatTimestampToTime(Date.now()),
+    },
+  ],
+};

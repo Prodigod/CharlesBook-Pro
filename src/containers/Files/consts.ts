@@ -1,0 +1,16 @@
+export const ITEM_ON_FOCUS_ICON_ZINDEX = 1000
+export const ITEM_NO_FOCUS_ICON_ZINDEX = 1
+
+export const ITEM_ON_FOCUS_CONTENT_ZINDEX = 2000
+export const ITEM_NO_FOCUS_CONTENT_ZINDEX = 1001
+
+export const APP_ON_FOCUS_CONTENT_ZINDEX = 5000
+export const APP_NO_FOCUS_CONTENT_ZINDEX = 4001
+
+export const DOCK_ZINDEX = 4000
+
+export const WARNING_ZINDEX = 3000
+
+export const CHROMEBAR_ZINDEX = 5000
+
+export const CHROMEBAR_HEIGHT = 50

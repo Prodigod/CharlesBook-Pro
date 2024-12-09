@@ -1,0 +1,61 @@
+.desktop-item {
+  // position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  width: 120px;
+  max-height: 120px;
+  max-width: 120px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 0;
+  position: absolute;
+
+  // @media (max-width: 600px) {
+  //   height: 80px;
+  //   width: 80px;
+  //   transform: none !important;
+  //   position: relative;
+  //   // display: none;
+  // }
+
+  &-icon {
+    position: relative;
+    display: flex;
+    width: 60%;
+    height: 55%;
+    margin-bottom: 2px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    border-radius: 3px;
+
+    // &-pdf {
+    //   background-image: url("../../../resources/images/icons/pdf_icon.png");
+    // }
+
+    // &-folder {
+    //   background-image: url("../../../resources/images/icons/folder_icon.png");
+    // }
+  }
+
+  &-name {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 50%;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 1.1;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0.85;
+
+    @media (max-width: 600px) {
+      font-size: 10px;
+    }
+  }
+}
