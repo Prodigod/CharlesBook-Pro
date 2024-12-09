@@ -22,7 +22,7 @@ export default function LoginPage() {
   }, [currentPassword]);
 
   const profile_img_url =
-    'https://bidenlaptopmedia.com/_data/i/galleries/Laptop/20230601_074914_pbx3WFPNRSmcslLYt097yg-me.jpg';
+    'https://external-preview.redd.it/bvSBzqWC33WPgHU3gEXDnTvxbWWw8a7MoU4AgbDPyaQ.jpg?width=640&crop=smart&auto=webp&s=3e9cf382e9fdc2c312c3bcb8ca5b828c11edbd74';
 
   const handleSubmitPassword = () => {
     dispatch(setPassword(currentPassword));
@@ -36,10 +36,10 @@ export default function LoginPage() {
         <img
           className="login-page-avatar"
           src={profile_img_url}
-          alt="$LAPTOP Coin on Solana"
+          alt="Coin on Cardano"
         />
 
-        <p className="login-page-username">Hunter Biden's Laptop</p>
+        <p className="login-page-username">Charles Hoskinson's Laptop</p>
 
         <div className="login-page-input-field-wrapper">
           <input

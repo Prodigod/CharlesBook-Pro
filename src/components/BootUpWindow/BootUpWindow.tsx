@@ -25,9 +25,9 @@ export default function BootUpWindow() {
       <img
         alt="Logo"
         className="logo"
-        src={require("../../resources/images/applelogo-color-new.png")}
+        src={require("../../resources/images/CardanoLogo.png")}
       />
-      <p className="crack-book-pro">CrackBook Pro</p>
+      <p className="crack-book-pro">CharlesBook Pro</p>
       <div className="bar-container">
         <div className="bar-background" />
         <motion.div
