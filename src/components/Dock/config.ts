@@ -33,7 +33,7 @@ export const dockConfig: DockItem[] = [
   {
     id: "buy",
     displayName: "Buy",
-    link: "https://www.google.com",
+    link: "https://www.snek.fun",
     iconLocation: require("../../resources/images/webp/safari.png"),
     enabled: true,
   },
@@ -48,14 +48,14 @@ export const dockConfig: DockItem[] = [
   {
     id: "discord",
     displayName: "Discord",
-    link: "https://discord.gg",
+    link: "https://discord.gg/33P7apjW",
     iconLocation: require("../../resources/images/webp/discord.png"),
     enabled: true,
   },
   {
     id: "twitter",
     displayName: "X.com",
-    link: "https://x.com/hireztherapper?lang=en",
+    link: "https://x.com/CDSonADA",
     iconLocation: require("../../resources/images/webp/xcom_icon.png"),
     enabled: true,
   },
