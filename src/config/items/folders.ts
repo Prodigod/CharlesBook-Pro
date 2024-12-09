@@ -34,7 +34,7 @@ const foldersItems = {
   //   defaultIconPosition: calculateRandomPosition(),
   //   folderChildren: ["image5"],
   // },
-  myNudes: {
+ Music: {
     id: "Music",
     displayName: "Hi-Rez Music",
     open: false,
@@ -68,7 +68,7 @@ const foldersItems = {
   //   defaultIconPosition: calculateRandomPosition(),
   //   folderChildren: ["howToRigTheUsElection", "daddysFlightLog", "budgetForTA"],
   // },
-  selfiez: {
+  Games: {
     id: "Games",
     displayName: "Hi-Rez Games",
     open: false,
