@@ -1,12 +1,10 @@
 import "./styles.scss";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import getChromeDropdownContent from "../../../utils/helpers/getChromeDropdownContent";
 
-export default function DropdownComponent({ selectedSection }) {
+export default function DropdownComponent({ selectedSection, closeDropdown }) {
   const content = getChromeDropdownContent(selectedSection);
-
-
-  const dropdownMenuRef = React.useRef(null); // Add this line
+  const dropdownMenuRef = useRef(null);
 
   function adjustDropdownMenu() {
     const dropdownMenu = dropdownMenuRef.current;
@@ -18,10 +16,7 @@ export default function DropdownComponent({ selectedSection }) {
 
     // Check if the right side is outside of the viewport
     if (rect.right > viewportWidth) {
-      // Calculate how much to adjust the dropdown menu by
       const adjustment = rect.right - viewportWidth;
-
-      // Adjust the dropdown menu's position to the left
       dropdownMenu.style.left = `${
         parseFloat(getComputedStyle(dropdownMenu).left) - adjustment
       }px`;
@@ -29,15 +24,12 @@ export default function DropdownComponent({ selectedSection }) {
 
     // Check if the left side is outside of the viewport
     if (rect.left < 0) {
-      // Adjust the dropdown menu's position to the right
       dropdownMenu.style.left = "0px";
     }
 
     // Check if the dropdown menu is wider than the viewport
     if (rect.width > viewportWidth) {
-      // Adjust the width of the dropdown menu to fit the viewport
       dropdownMenu.style.width = `${viewportWidth}px`;
-      // Align the dropdown menu with the left edge of the viewport
       dropdownMenu.style.left = "0px";
     }
   }
@@ -45,6 +37,19 @@ export default function DropdownComponent({ selectedSection }) {
   useEffect(() => {
     adjustDropdownMenu();
   }, []);
+
+  // Add click-outside detection
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownMenuRef.current && !dropdownMenuRef.current.contains(event.target)) {
+        closeDropdown(); // Call the closeDropdown function passed as a prop
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [closeDropdown]);
 
   return (
     <div

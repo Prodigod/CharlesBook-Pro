@@ -5,9 +5,7 @@ import React from "react";
 import DropdownComponent from "./DropdownComponent";
 import formatDate from "../../utils/helpers/formatDate";
 
-// import {ChromeBarWrapper} from "./styles"
-
-export default function ({isChromeBarExpanded,setIsChromeBarExpanded}) {
+export default function ({ isChromeBarExpanded, setIsChromeBarExpanded }) {
   const [currentDate, setCurrentDate] = React.useState(new Date());
   const [formattedCurrentDate, setFormattedCurrentDate] = React.useState("");
 
@@ -29,14 +27,16 @@ export default function ({isChromeBarExpanded,setIsChromeBarExpanded}) {
   const dispatchAction = (e: React.MouseEvent<HTMLElement>) => {
     const selectedSection = e.target as HTMLElement;
 
-    console.log("selectedSection")
-    console.log(selectedSection)
-
     setSelectedSection(selectedSection.id);
   };
 
   const toggleMenu = () => {
     setIsChromeBarExpanded(!isChromeBarExpanded);
+  };
+
+  // Close dropdown function
+  const closeDropdown = () => {
+    setSelectedSection(undefined);
   };
 
   return (
@@ -55,7 +55,10 @@ export default function ({isChromeBarExpanded,setIsChromeBarExpanded}) {
           } bg`}
         ></div>
         {selectedSection === "logo" ? (
-          <DropdownComponent selectedSection={selectedSection} />
+          <DropdownComponent
+            selectedSection={selectedSection}
+            closeDropdown={closeDropdown}
+          />
         ) : null}
       </div>
       <i className="mobile-menu-icon fa fa-bars" onClick={toggleMenu}></i>
@@ -70,7 +73,10 @@ export default function ({isChromeBarExpanded,setIsChromeBarExpanded}) {
             }`}
           ></div>
           {selectedSection === "chrome" ? (
-            <DropdownComponent selectedSection={selectedSection} />
+            <DropdownComponent
+              selectedSection={selectedSection}
+              closeDropdown={closeDropdown}
+            />
           ) : null}
         </div>
 
@@ -84,7 +90,10 @@ export default function ({isChromeBarExpanded,setIsChromeBarExpanded}) {
             }`}
           ></div>
           {selectedSection === "file" ? (
-            <DropdownComponent selectedSection={selectedSection} />
+            <DropdownComponent
+              selectedSection={selectedSection}
+              closeDropdown={closeDropdown}
+            />
           ) : null}
         </div>
 
@@ -98,7 +107,10 @@ export default function ({isChromeBarExpanded,setIsChromeBarExpanded}) {
             }`}
           ></div>
           {selectedSection === "edit" ? (
-            <DropdownComponent selectedSection={selectedSection} />
+            <DropdownComponent
+              selectedSection={selectedSection}
+              closeDropdown={closeDropdown}
+            />
           ) : null}
         </div>
 
@@ -112,7 +124,10 @@ export default function ({isChromeBarExpanded,setIsChromeBarExpanded}) {
             }`}
           ></div>
           {selectedSection === "view" ? (
-            <DropdownComponent selectedSection={selectedSection} />
+            <DropdownComponent
+              selectedSection={selectedSection}
+              closeDropdown={closeDropdown}
+            />
           ) : null}
         </div>
         <div
@@ -129,7 +144,10 @@ export default function ({isChromeBarExpanded,setIsChromeBarExpanded}) {
             }`}
           ></div>
           {selectedSection === "chrome-history" ? (
-            <DropdownComponent selectedSection={selectedSection} />
+            <DropdownComponent
+              selectedSection={selectedSection}
+              closeDropdown={closeDropdown}
+            />
           ) : null}
         </div>
 
@@ -147,7 +165,10 @@ export default function ({isChromeBarExpanded,setIsChromeBarExpanded}) {
             }`}
           ></div>
           {selectedSection === "chrome-bookmarks" ? (
-            <DropdownComponent selectedSection={selectedSection} />
+            <DropdownComponent
+              selectedSection={selectedSection}
+              closeDropdown={closeDropdown}
+            />
           ) : null}
         </div>
 

@@ -40,8 +40,7 @@ export const dockConfig: DockItem[] = [
   {
     id: "music",
     displayName: "Music",
-    //openFileId: "ride2dis",
-    link: "https://www.google.com/",
+    openFileId: "ride2dis",
     iconLocation: require("../../resources/images/webp/applemusic.png"),
     enabled: true,
   },
