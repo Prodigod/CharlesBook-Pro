@@ -2,14 +2,14 @@ export const dockConfig = [
   {
     id: "finder",
     displayName: "Finder",
-    link: "https://www.hunterbiden.report/p/welcome-to-the-hunter-biden-report",
+    link: "https://www.google.com",
     iconLocation: require("../../resources/images/webp/finder.webp"),
     enabled: true,
   },
   {
     id: "photos",
     displayName: "Photos",
-    link: "https://bidenlaptopmedia.com/index.php?/category/laptop",
+    link: "https://google.com/images",
     iconLocation: require("../../resources/images/webp/photos.png"),
     enabled: true,
   },
@@ -37,7 +37,7 @@ export const dockConfig = [
   {
     id: "discord",
     displayName: "Discord",
-    link: "https://t.me/HBcorruptlaptop",
+    link: "https://discord.gg",
     iconLocation: require("../../resources/images/webp/discord.png"),
     enabled: true,
   },
@@ -60,7 +60,7 @@ export const dockConfig = [
     displayName: "WhatsApp",
     openAppId: "whatsapp",
     iconLocation: require("../../resources/images/webp/whatsapp_icon.png"),
-    enabled: true,
+    enabled: false,
   },
 ];
 
