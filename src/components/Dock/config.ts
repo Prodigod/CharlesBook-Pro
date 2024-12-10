@@ -44,12 +44,16 @@ export const dockConfig: DockItem[] = [
       widget: `
         <div style="left: 0; width: 100%; height: 450px; position: relative;">
               <iframe
-               src="https://music.apple.com/us/new"
-                         style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;"
-                     allowFullScreen
-                      allow="encrypted-media; fullscreen; clipboard-write;"
-                  title="Embedded Content"
-            ></iframe>
+                    style="border: 0; width: 300px; height: 150px;"
+                          srcdoc='
+        <a href="https://music.apple.com/us/artist/hi-rez/57895780" target="_blank" title="Visit Hi-Rez on Apple Music">
+            <img src="/hirez.jpg" 
+                 alt="Hi-Rez on Apple Music" 
+                 style="width: 100%; height: 100%; border: 0; cursor: pointer;">
+        </a>
+    '>
+</iframe>
+
               </div>
 
       `,

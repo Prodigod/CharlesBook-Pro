@@ -12,16 +12,16 @@ const CENTER_ICONS_OFFSET = 120;
  
 
   //link
-  buyToken: {
-    id: "buyToken",
-    displayName: "Buy Token",
-    open: false,
-    type: ItemTypes.link,
-    goToUrl:
-      "https://jupiter-terminal.dexscreener.com/?inputMint=HLwEJQVzs7SvjXuXpBTRHaLp5S6uWoWTUhLjJxBfy1c7&outputMint=So11111111111111111111111111111111111111112",
-    defaultIconPosition: {x: 44, y: 44},
-    iconLocation: "./assets/icons/cardano.png",
-  },
+  // buyToken: {
+  //   id: "buyToken",
+  //   displayName: "Buy Token",
+  //   open: false,
+  //   type: ItemTypes.link,
+  //   goToUrl:
+  //     "https://jupiter-terminal.dexscreener.com/?inputMint=HLwEJQVzs7SvjXuXpBTRHaLp5S6uWoWTUhLjJxBfy1c7&outputMint=So11111111111111111111111111111111111111112",
+  //   defaultIconPosition: {x: 44, y: 44},
+  //   iconLocation: "./assets/icons/cardano.png",
+  // },
 
   //sexy squirrel photos
   squirrel1: {

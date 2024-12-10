@@ -396,8 +396,8 @@ const getChromeDropdownContent = (state: any) => {
       break;
     case "chrome-bookmarks":
       content = [
-        { name: "Hi-Rez The Rapper Music", available: true, image: folderImage },
-        { name: "Hi-Rez the rapper video games", available: true, image: folderImage },
+        // { name: "Hi-Rez The Rapper Music", available: true, image: folderImage },    //bookmark
+        // { name: "Hi-Rez the rapper video games", available: true, image: folderImage },    //bookmark
         {
           name: "CHIPS (@ChipsCardano) / X",
           available: true,
