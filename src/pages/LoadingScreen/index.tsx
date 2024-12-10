@@ -47,12 +47,7 @@ export default function BootUpWindow() {
       <div className="loading-status-wrapper">
         <p className="loading-status">Updating OS... </p>
         <p className="loading-status">Less than 69 hours remaining.. </p>
-        <p>jdjd</p>
       </div>
-
-      <p className="ca">
-        <span>CA:</span>HLwEJQVzs7SvjXuXpBTRHaLp5S6uWoWTUhLjJxBfy1c7
-      </p>
     </div>
   );
 }

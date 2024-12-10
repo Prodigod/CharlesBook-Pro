@@ -60,7 +60,6 @@ const DockIconImage = styled.img`
   &:hover {
     margin-bottom: 35px;
 
-    // media query for small
     @media (max-width: 600px) {
       margin-bottom: 0px;
     }
@@ -71,7 +70,6 @@ const DockIconImage = styled.img`
 
     height: 3.59rem;
 
-    // media query for small
     @media (min-width: 600px) {
       height: 90px;
       width: 88px;
@@ -93,20 +91,31 @@ const DockPoint = styled.div`
 `;
 
 export default function DockItem({
-  Key: id,
+  dockKey, // Accept the explicitly passed key
+  dockItemIndex,
   displayName,
   iconLocation,
-  widget, // Add widget prop
   isActive,
   onHandleClick,
   handleMouseEnter,
   handleMouseLeave,
-  dockItemIndex,
   itemHovered,
+  widget,
+}: {
+  dockKey: string; // Add dockKey type
+  dockItemIndex: number;
+  displayName: string;
+  iconLocation: string;
+  isActive: boolean;
+  onHandleClick: () => void;
+  handleMouseEnter: (index: number) => void;
+  handleMouseLeave: () => void;
+  itemHovered: number;
+  widget?: string;
 }) {
   return (
     <DockItemWrapper
-      onClick={() => onHandleClick(dockItemIndex, widget)} // Pass widget on click
+      onClick={onHandleClick}
       onMouseEnter={() => handleMouseEnter(dockItemIndex)}
       onMouseLeave={handleMouseLeave}
     >

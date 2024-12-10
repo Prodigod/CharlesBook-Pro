@@ -65,27 +65,9 @@ export default function LoginPage() {
           </button>
         </div>
 
-        <p className="login-page-hint">Hint: Password</p>
+        <p className="login-page-hint">Hint: Name Of A Squirrel</p>
 
         <div className="login-extra-info">
-     
-          <div className="login-page-ca">
-            <span>CA:</span>
-            <p className="login-page-ca-text">
-              HLwEJQVzs7SvjXuXpBTRHaLp5S6uWoWTUhLjJxBfy1c7
-            </p>
-            <button
-              className="copy-button"
-              onClick={(e) =>
-                copyToClipboard(
-                  'HLwEJQVzs7SvjXuXpBTRHaLp5S6uWoWTUhLjJxBfy1c7',
-                  e
-                )
-              }
-            >
-              <i className="fa fa-clone"></i>
-            </button>
-          </div>
         </div>
 
         {/* <BottomButtonsWrapper />  */}

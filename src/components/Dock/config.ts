@@ -43,13 +43,15 @@ export const dockConfig: DockItem[] = [
       displayName: "Music",
       widget: `
         <div style="left: 0; width: 100%; height: 450px; position: relative;">
-          <iframe
-            src="https://music.apple.com/us/artist/hi-rez/57895780"
-            style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;"
-            allowfullscreen
-            allow="encrypted-media; fullscreen; clipboard-write;"
-          ></iframe>
-        </div>
+              <iframe
+               src="https://music.apple.com/us/new"
+                         style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;"
+                     allowFullScreen
+                      allow="encrypted-media; fullscreen; clipboard-write;"
+                  title="Embedded Content"
+            ></iframe>
+              </div>
+
       `,
       iconLocation: require("../../resources/images/webp/applemusic.png"),
       enabled: true
@@ -71,7 +73,7 @@ export const dockConfig: DockItem[] = [
   {
     id: "instagram",
     displayName: "Instagram",
-    link: "https://www.instagram.com/hireztherapper/?hl=en",
+    link: "https://www.instagram.com/charleshoskinson.cardano/?hl=en",
     iconLocation: require("../../resources/images/webp/insta.png"),
     enabled: true,
   },

@@ -102,17 +102,18 @@ export default function Dock({ allApps, allFiles }) {
 
           return (
             <DockItem
-              dockItemIndex={index}
-              Key={`dock-item-${id}`}
-              displayName={displayName}
-              iconLocation={iconLocation}
-              isActive={isAppOpen || isFileOpen}
-              onHandleClick={onHandleClick}
-              handleMouseEnter={handleMouseEnter}
-              handleMouseLeave={handleMouseLeave}
-              itemHovered={itemHovered}
-              widget={widget}
-            />
+            dockItemIndex={index}
+            dockKey={`dock-item-${id}`} // Pass the key explicitly
+            key={`dock-item-${id}`}
+            displayName={displayName}
+            iconLocation={iconLocation}
+            isActive={isAppOpen || isFileOpen}
+            onHandleClick={onHandleClick}
+            handleMouseEnter={handleMouseEnter}
+            handleMouseLeave={handleMouseLeave}
+            itemHovered={itemHovered}
+            widget={widget} // Pass the widget prop
+          />
           );
         })}
       </DockWrapper>

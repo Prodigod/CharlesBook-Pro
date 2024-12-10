@@ -1,7 +1,13 @@
 import googleImage from "../../resources/images/icons/google.jpg";
-import phImage from "../../resources/images/icons/ph.jpg";
+import charlesImage from "../../resources/images/icons/charles.png";
 import ytImage from "../../resources/images/icons/yt.png";
 import folderImage from "../../resources/images/icons/folder_icon.png";
+import xImage from "../../resources/images/icons/x.png"
+import betaImage from "../../resources/images/icons/beta.png"
+import snekImage from "../../resources/images/icons/snek.jpg"
+import chadImage from "../../resources/images/icons/chad.png"
+import booImage from "../../resources/images/icons/boo.jpg"
+import coinImage from "../../resources/images/icons/coin.jpg"
 
 const getChromeDropdownContent = (state: any) => {
   let content: any[] = [];
@@ -357,28 +363,28 @@ const getChromeDropdownContent = (state: any) => {
     case "chrome-history":
       content = [
         {
-          name: "Cardano Coin",
+          name: "Snek.fun - Home",
           available: true,
-          image: googleImage,
-          link: "https://www.google.com/search?q=Cardano coin",
+          image: snekImage,
+          link: "https://www.snek.fun/",
         },
         {
-          name: "Hi-Rez music",
+          name: "Chad",
           available: true,
-          image: ytImage,
-          link: "https://www.youtube.com/results?search_query=Hi-Rez+music",
+          image: chadImage,
+          link: "https://charlesthechad.com/",
         },
         {
-          name: "Whats the best cardano Coin? - Google Search",
+          name: "$BOO- Premium Memecoin",
           available: true,
-          image: googleImage,
-          link: "https://www.google.com/search?q=whats+the+best+cardano+coin&sca_esv=4ea9ed7b68a81626&sxsrf=ADLYWIKAO_V08xOnK76ORp3DttXtDNVr0Q%3A1733711038555&source=hp&ei=vlRWZ4boHafXptQPt9C-gQU&iflsig=AL9hbdgAAAAAZ1ZizrMxs_hstWPCnQYJ5MhqLF2pJ1bW&ved=0ahUKEwiGv9700JmKAxWnq4kEHTeoL1AQ4dUDCBo&uact=5&oq=whats+the+best+cardano+coin&gs_lp=Egdnd3Mtd2l6Iht3aGF0cyB0aGUgYmVzdCBjYXJkYW5vIGNvaW4yBxAhGKABGAoyBxAhGKABGAoyBxAhGKABGAoyBxAhGKABGAoyBxAhGKABGAoyBRAhGKsCMgUQIRirAjIFECEYqwJIuxxQAFimG3AAeACQAQCYAYsBoAHXEaoBBDIxLja4AQPIAQD4AQGYAhugAoUSwgIEECMYJ8ICCxAAGIAEGLEDGIMBwgIREC4YgAQYsQMY0QMYgwEYxwHCAg4QLhiABBixAxiDARjUAsICCxAuGIAEGNEDGMcBwgILEAAYgAQYkQIYigXCAgoQABiABBhDGIoFwgINEAAYgAQYsQMYQxiKBcICEBAAGIAEGLEDGEMYgwEYigXCAgwQABiABBhDGIoFGArCAggQABiABBjJA8ICBxAAGIAEGArCAgUQABiABMICCxAAGIAEGJIDGIoFwgIOEAAYgAQYsQMYgwEYigXCAg0QABiABBixAxiDARgKwgIIEAAYgAQYsQPCAgYQABgWGB7CAggQABgWGAoYHsICCxAAGIAEGIYDGIoFwgIIEAAYgAQYogTCAggQABiiBBiJBZgDAOIDBRIBMSBAkgcEMjEuNqAHyfAB&sclient=gws-wiz",
+          image: booImage,
+          link: "https://boocoin.io/",
         },
         {
-          name: "Hi-Rez Music",
+          name: "Snek price today, SNEK to USD",
           available: true,
-          image: ytImage,
-          link: "https://www.youtube.com/results?search_query=Hi-Rez-Music",
+          image: coinImage,
+          link: "https://coinmarketcap.com/currencies/snek/",
         },
         {
           name: "Cardano Memes ready to takeoff",
@@ -386,74 +392,43 @@ const getChromeDropdownContent = (state: any) => {
           image: ytImage,
           link: "https://www.youtube.com/shorts/XQraBGYQzyw",
         },
-        {
-          name: "How to get money - Google Search",
-          available: true,
-          image: googleImage,
-          link: "https://www.google.com/search?q=How to avoid paying taxes in the us",
-        },
-        {
-          name: "Google Search",
-          available: true,
-          image: googleImage,
-          link: "https://www.google.com/search?q=Escorts in Washington DC area",
-        },
-        {
-          name: "Hi Rez Video Games",
-          available: true,
-          image: googleImage,
-          link: "https://www.google.com/search?q=Is Hunter Biden laptop info publically availible on google?",
-        },
-        {
-          name: "How to play HI-Rez The Rapper video games",
-          available: true,
-          image: googleImage,
-          link: "https://www.google.com/search?q=How to delete sensitive data on a macbook pro",
-        },
       ];
       break;
     case "chrome-bookmarks":
       content = [
         { name: "Hi-Rez The Rapper Music", available: true, image: folderImage },
         { name: "Hi-Rez the rapper video games", available: true, image: folderImage },
-        { name: "Hi-Rez Coin", available: true, image: folderImage },
-        { name: "Why should I buy Hi-Rez coin?", available: true, image: folderImage },
         {
-          name: "Hi-Rez Music",
+          name: "CHIPS (@ChipsCardano) / X",
           available: true,
-          image: ytImage,
-          link: "https://www.biblegateway.com/passage/?search=Jeremiah%2013%3A27&version=NIV",
+          image: xImage,
+          link: "https://x.com/ChipsCardano",
         },
         {
-          name: 'What is Cardano? ADA Explained with Animations',
+          name: 'Charles Hoskimpson',
           available: true,
-          image: ytImage,
-          link: "https://www.youtube.com/watch?v=UMUztLQNqSI&t=50s",
+          image: charlesImage,
+          link: "https://www.charleshoskimpson.fun/",
         },
         {
-          name: "Hi-Rez - 2+2=5 (Official Music Video) - Youtube",
+          name: "BETA",
           available: true,
-          image: ytImage,
-          link: "https://www.youtube.com/watch?v=D_tXQo1yz0o",
+          image: betaImage,
+          link: "https://betaonada.com/",
         },
         {
-          name: "How to Cardano coin and transfer it to Hi-Rez Coin",
+          name: "CHAD (@charles_thechad) / X",
           available: true,
-          image: googleImage,
-          link: "https://www.google.com/search?q=How to avoid paying taxes in the us",
+          image: xImage,
+          link: "https://x.com/charles_thechad",
         },
         {
-          name: "How to transfer money to crypto wallet - Google Search",
+          name: "Snek (@Snek) / X",
           available: true,
-          image: googleImage,
-          link: "https://www.google.com/search?q=How+To+Transfer+Money+To+Crypto+Wallet&sca_esv=4ea9ed7b68a81626&sxsrf=ADLYWILcJXjO8uJraMx12-T-di_mBipvkw%3A1733711132428&ei=HFVWZ4biGaiY5OMPnP-v4Ag&ved=0ahUKEwiG4MOh0ZmKAxUoDHkGHZz_C4wQ4dUDCBA&oq=Howtotransfermoneytocryptowallet&gs_lp=Egxnd3Mtd2l6LXNlcnAiIEhvd3RvdHJhbnNmZXJtb25leXRvY3J5cHRvd2FsbGV0SABQAFgAcAB4AZABAJgBAKABAKoBALgBDMgBAJgCAKACAJgDAOIDBRIBMSBAkgcAoAcA&sclient=gws-wiz-serp",
+          image: xImage,
+          link: "https://x.com/snek",
         },
-        {
-          name: "How to play Hi-Rez The Rappers games.",
-          available: true,
-          image: googleImage,
-          link: "https://www.google.com/search?q=How+to+play+Hi-Rez+The+Rappers+games&sca_esv=4ea9ed7b68a81626&rlz=1C1ONGR_enUS1124US1124&sxsrf=ADLYWIJYzV_f8BZo5l_5kn5Jm0KmteBmyA%3A1733711178541&ei=SlVWZ93LIPijptQP1K6HkA4&ved=0ahUKEwjdmMK30ZmKAxX4kYkEHVTXAeIQ4dUDCBA&oq=How+to+play+Hi-Rez+The+Rappers+games&gs_lp=Egxnd3Mtd2l6LXNlcnAiJEhvdyB0byBwbGF5IEhpLVJleiBUaGUgUmFwcGVycyBnYW1lc0gAUABYAHAAeAGQAQCYAQCgAQCqAQC4AQzIAQCYAgCgAgCYAwDiAwUSATEgQJIHAKAHAA&sclient=gws-wiz-serp",
-        },
+        
       ];
       break;
     case "help":
