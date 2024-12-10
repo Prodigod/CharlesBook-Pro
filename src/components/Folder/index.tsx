@@ -16,7 +16,7 @@ const Folder = (props: any) => {
     props;
 
   const itemOnFocus = useSelector(itemOnFocusSelector);
-  const isItemOnFocus = itemOnFocus == id;
+  const isItemOnFocus = itemOnFocus === id;
 
   const iconZIndex = isItemOnFocus
     ? ITEM_ON_FOCUS_ICON_ZINDEX
@@ -34,6 +34,7 @@ const Folder = (props: any) => {
         position={position}
         iconLocation={iconLocation}
         zIndex={iconZIndex}
+        isFocused={isItemOnFocus} // Pass focus state to FolderIcon
       />
 
       {open && (

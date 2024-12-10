@@ -10,6 +10,7 @@ const FolderIconWrapper = styled.div<{
   left?: string;
   opacity?: number;
   zIndex?: number;
+  isFocused: boolean;
 }>`
   display: flex;
   flex-direction: column;
@@ -20,13 +21,14 @@ const FolderIconWrapper = styled.div<{
   justify-content: center;
   align-items: center;
   color: white;
-  z-index: 0;
   position: absolute;
   top: ${(props) => props.top + "%"};
   left: ${(props) => props.left + "%"};
   opacity: ${(props) => props.opacity};
   cursor: pointer;
   z-index: ${(props) => props.zIndex};
+  border: ${(props) => (props.isFocused ? "2px solid blue" : "none")};
+  background-color: ${(props) => (props.isFocused ? "rgba(0, 0, 255, 0.1)" : "transparent")};
 
   @media (max-width: 550px) {
     width: 90px;
@@ -34,7 +36,6 @@ const FolderIconWrapper = styled.div<{
     max-height: 90px;
     max-width: 90px;
   }
-  
 `;
 
 const FolderIconImage = styled.div<{ iconLocation?: string }>`
@@ -51,12 +52,9 @@ const FolderIconImage = styled.div<{ iconLocation?: string }>`
 `;
 
 const FolderIconName = styled.div`
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  // width: 50%;
-  border-radius: 3px;
   text-align: center;
   line-height: 1.1;
   font-size: 12px;
@@ -69,13 +67,9 @@ const FolderIconName = styled.div`
   }
 `;
 
-const FolderIcon = ({ id, displayName, position, iconLocation, zIndex }) => {
+const FolderIcon = ({ id, displayName, position, iconLocation, zIndex, isFocused }) => {
   const dispatch = useDispatch();
-
   const [opacity, setOpacity] = React.useState(1);
-
-  //   const [isSelected, setIsSelected] = React.useState(false);
-
   const [lastTouchTime, setLastTouchTime] = React.useState(0);
 
   const handleTouchStart = () => {
@@ -87,6 +81,10 @@ const FolderIcon = ({ id, displayName, position, iconLocation, zIndex }) => {
     }
 
     setLastTouchTime(currentTime);
+  };
+
+  const handleClickForHighlight = () => {
+    dispatch(selectFolder(id));
   };
 
   const handleClickIcon = () => {
@@ -101,18 +99,19 @@ const FolderIcon = ({ id, displayName, position, iconLocation, zIndex }) => {
       <FolderIconWrapper
         ref={targetRef}
         onTouchStart={handleTouchStart}
-        onDoubleClickCapture={handleClickIcon}
+        onClick={handleClickForHighlight}
+        onDoubleClick={handleClickIcon}
         top={position.y}
         left={position.x}
         opacity={opacity}
         zIndex={zIndex}
+        isFocused={isFocused}
       >
         <FolderIconImage iconLocation={iconLocation}></FolderIconImage>
         <FolderIconName>{displayName}</FolderIconName>
       </FolderIconWrapper>
 
       <Moveable
-        //drag
         target={targetRef}
         origin={false}
         draggable={true}
@@ -120,14 +119,14 @@ const FolderIcon = ({ id, displayName, position, iconLocation, zIndex }) => {
         edgeDraggable={false}
         startDragRotate={0}
         throttleDragRotate={0}
-        onDragStart={(e) => {
+        onDragStart={() => {
           dispatch(selectFolder(id));
           setOpacity(0.8);
         }}
         onDrag={(e) => {
           e.target.style.transform = e.transform;
         }}
-        onDragEnd={(e) => {
+        onDragEnd={() => {
           setOpacity(1);
         }}
         hideDefaultLines={true}

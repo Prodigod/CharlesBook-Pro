@@ -5,7 +5,6 @@ import { SLICE_NAME } from "./consts";
 import foldersItems from "../../config/items/folders";
 
 // import { ItemTypes } from "../../types/items";
-
 // import generateObjFromArr from "../../utils/helpers/generateObjFromArr";
 
 const initialState = {
@@ -33,6 +32,7 @@ export const FoldersSlice = createSlice({
     },
   },
 });
+
 export const {
   selectFolder,
   openFolder,
