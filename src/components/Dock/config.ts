@@ -44,7 +44,7 @@ export const dockConfig: DockItem[] = [
       widget: `
         <div style="left: 0; width: 100%; height: 450px; position: relative;">
               <iframe
-                    style="border: 0; width: 300px; height: 150px;"
+                    style="border: 0; width: 1975px; height: 1000px;"
                           srcdoc='
         <a href="https://music.apple.com/us/artist/hi-rez/57895780" target="_blank" title="Visit Hi-Rez on Apple Music">
             <img src="/hirez.jpg" 
@@ -63,7 +63,7 @@ export const dockConfig: DockItem[] = [
   {
     id: "discord",
     displayName: "Discord",
-    link: "https://discord.gg/33P7apjW",
+    link: "https://discord.gg/kv9j9VBp",
     iconLocation: require("../../resources/images/webp/discord.png"),
     enabled: true,
   },
