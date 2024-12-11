@@ -114,6 +114,7 @@ export default function Dock({ allApps, allFiles }) {
             itemHovered={itemHovered}
             widget={widget} // Pass the widget prop
           />
+
           );
         })}
       </DockWrapper>
