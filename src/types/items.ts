@@ -5,5 +5,6 @@ export enum ItemTypes {
     image,
     txt,
     app,
-    link
+    link,
+    widget
   }

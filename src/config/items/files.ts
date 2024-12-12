@@ -3,13 +3,22 @@ import { ItemTypes } from "../../types/items";
 export const DEFAULT_PDF_ICON_LOCATION = "./assets/icons/pdf_icon.png";
 
 import calculateRandomPosition from "../../utils/helpers/calculateRandomPosition";
-import calculateMiddleWithOffset from "../../utils/helpers/calculateCentreWithOffset";
 
 const CENTER_ICONS_OFFSET = 120;
 
  const filesItems = {
  
- 
+ //music file
+ music: {
+  id: "music",
+  displayName: "iTunes",
+  open: false,
+  type: ItemTypes.widget,
+  iconLocation: "./hirez.jpg",
+  fileLocation: "./hirez.jpg",
+  defaultIconPosition: { x: -10, y: -10 },
+ },
+
 
   //link
   // buyToken: {
