@@ -6,7 +6,7 @@ import Dock from "../../components/Dock";
 import { ITEMS_CONFIG } from "../../config/items";
 import Item from "../../components/Item";
 import { ItemTypes } from "../../types/items";
-
+import PriceWidget from "../../components/PriceWidget";
 import useWindowSize from "../../utils/helpers/hooks/useWindowDimensions";
 import MacOSWarningDialog from "../../components/WarningDialog";
 import Chat from "../../components/Chat";
@@ -37,7 +37,7 @@ function DesktopPage() {
         isChromeBarExpanded={isChromeBarExpanded}
         setIsChromeBarExpanded={setIsChromeBarExpanded}
       />
-
+     <PriceWidget />
       {windowSize.width < 549 && !isChromeBarExpanded && (
         <MacOSWarningDialog message="This site is optimized for desktop use. For the best experience, please access it through a desktop device." />
       )}

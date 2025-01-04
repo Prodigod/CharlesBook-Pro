@@ -3,7 +3,9 @@ import { ItemTypes } from "../../../../types/items";
 import FileContentImage from "./FileContentImage";
 import FileContentPdf from "./FileContentPdf";
 import FileContentVideo from "./FileContentVideo";
-import FileContentWidget from "./FileContentWidget";
+import { FileContentMusicWidget, FileContentSafariWidget, FileContentChromeWidget, FileContentGameWidget,
+  FileContentGameWidgetSpinMaster 
+ } from "./FileContentWidget";
 
 const FileContentInner = ({
   type,
@@ -15,6 +17,10 @@ const FileContentInner = ({
   audioSource = "./assets/mp3s/PopOff.mp3",
   pauseButton = "./assets/icons/pausebutton.png",
   playButton = "./assets/icons/playbutton.png",
+  urlSafari = "https://www.snek.fun/",
+  urlChrome = "https://www.taptools.io/",
+  zombies ="./games/zombies/index.html",
+  spinMaster = "./games/SpinMaster/index.html",
 
 }) => {
   switch (type) {
@@ -25,13 +31,25 @@ const FileContentInner = ({
     case ItemTypes.image:
       return <FileContentImage iconLocation={iconLocation}></FileContentImage>;
       case ItemTypes.widget:
-        return <FileContentWidget iconLocation={iconLocation}
-         url={url} 
-         audioSource={audioSource}
-         pauseButton={pauseButton} 
-         playButton={playButton}></FileContentWidget>
-    default:
-      return null;
+             return <FileContentMusicWidget 
+                iconLocation={iconLocation}
+                url={url}
+                audioSource={audioSource}
+                pauseButton={pauseButton} 
+                playButton={playButton}
+              />
+              case ItemTypes.safariWidget:
+             return <FileContentSafariWidget urlSafari={urlSafari} />
+             case ItemTypes.chromeWidget:
+              return <FileContentChromeWidget urlChrome={urlChrome} />
+              case ItemTypes.gameWidget:
+              return <FileContentGameWidget
+              zombies={zombies}/>
+              case ItemTypes.gameWidgetSpinMaster:
+                return <FileContentGameWidgetSpinMaster
+                spinMaster={spinMaster}/>
+              default:
+            return null;
   }
 };
 

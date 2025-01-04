@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { openApp, closeApp } from "../../containers/Apps/slice";
 import { openFile, closeFile } from "../../containers/Files/slice";
-
+import { openFolder, closeFolder} from "../../containers/Folders/slice";
 import DockItem from "./DockItem";
 import { getDockConfig } from "./config";
 
@@ -67,16 +67,18 @@ export default function Dock({ allApps, allFiles }) {
     <>
       <DockWrapper>
         {dockConfig.map((dockItem, index) => {
-          const { id, displayName, iconLocation, link, openFileId = null, openAppId, widget } =
+          const { id, displayName, iconLocation, link, openFileId, openAppId, widget, openFolderId } =
             dockItem;
 
           const isAppOpen = allApps[openAppId]?.open;
           const isFileOpen = allFiles[openFileId]?.open;
+          const isFolderOpen = allFiles[openFolderId]?.open;
 
           const onHandleClick = () => {
-            const isLink = link && !openFileId && !openAppId && !widget;
-            const isApp = !link && !openFileId && openAppId;
+            const isLink = link && !openFileId && !openFolderId && !openAppId && !widget;
+            const isApp = !link && !openFileId && !openFolderId && openAppId;
             const isFile = openFileId !== undefined && !link && !openAppId && !widget;
+            const isFolder = openFolderId !== undefined && !link && !openAppId && !widget;
             const isWidget = widget;
 
             if (isLink) {
@@ -93,6 +95,12 @@ export default function Dock({ allApps, allFiles }) {
               } else {
                 dispatch(openFile(openFileId));
               }
+             } else if (isFolder) {
+                if (isFolderOpen) {
+                  dispatch(closeFolder(openFolderId));
+                } else {
+                  dispatch(openFolder(openFolderId));
+                }
             } else if (isWidget) {
               setWidgetContent(widget); // Display the widget
             } else {

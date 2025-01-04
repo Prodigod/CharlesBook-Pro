@@ -1,8 +1,5 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import ReactGA from 'react-ga4';
-
-import LoadingScreen from './pages/LoadingScreen';
 import LoginPage from './pages/Login';
 import DesktopPage from './pages/Desktop';
 

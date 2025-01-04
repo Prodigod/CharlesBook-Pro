@@ -405,16 +405,16 @@ const getChromeDropdownContent = (state: any) => {
           link: "https://x.com/ChipsCardano",
         },
         {
-          name: 'Charles Hoskimpson',
-          available: true,
-          image: charlesImage,
-          link: "https://www.charleshoskimpson.fun/",
+          // name: 'Charles Hoskimpson',
+          // available: true,
+          // image: charlesImage,
+          // link: "https://www.charleshoskimpson.fun/",
         },
         {
-          name: "BETA",
+          name: "HOSKY",
           available: true,
           image: betaImage,
-          link: "https://betaonada.com/",
+          link: "https://hosky.io/",
         },
         {
           name: "CHAD (@charles_thechad) / X",

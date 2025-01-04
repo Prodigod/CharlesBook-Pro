@@ -17,12 +17,17 @@ export const FoldersSlice = createSlice({
   name: SLICE_NAME,
   initialState,
   reducers: {
-    selectFolder: (state, action) => {
-      state.selectedFolder = action.payload;
-    },
     openFolder: (state, action) => {
-      state.folders[action.payload].open = true;
-      state.selectedFolder = action.payload;
+      const folder = state.folders[action.payload];
+      if(folder) {
+        folder.open = true;
+        state.selectedFolder = action.payload;
+      }else{
+        console.warn(`Folder with id ${action.payload} not found.`);
+
+        state.selectedFolder = action.payload;
+      
+      }
     },
     closeFolder: (state, action) => {
       state.folders[action.payload].open = false;
@@ -30,6 +35,10 @@ export const FoldersSlice = createSlice({
     setFolderWithDraggingChildren: (state, action) => {
       state.folderWithDraggingChildren = action.payload;
     },
+    selectFolder: (state, action) => {
+      state.selectedFolder = action.payload;
+    }
+
   },
 });
 

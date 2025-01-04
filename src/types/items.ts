@@ -6,5 +6,9 @@ export enum ItemTypes {
     txt,
     app,
     link,
-    widget
+    widget,
+    safariWidget,
+    chromeWidget,
+    gameWidget,
+    gameWidgetSpinMaster
   }

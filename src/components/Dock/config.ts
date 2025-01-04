@@ -7,6 +7,7 @@ export type DockItem = {
   link?: string; // Optional for items with links
   openFileId?: string; // Optional for file-related items
   openAppId?: string; // Optional for app-related items
+  openFolderId?: string;
 };
 
 export const dockConfig: DockItem[] = [
@@ -20,7 +21,7 @@ export const dockConfig: DockItem[] = [
   {
     id: "photos",
     displayName: "Photos",
-    link: "https://google.com/images",
+    openFolderId: "Photos",
     iconLocation: require("../../resources/images/webp/photos.png"),
     enabled: true,
   },
@@ -32,9 +33,9 @@ export const dockConfig: DockItem[] = [
     enabled: false,
   },
   {
-    id: "buy",
-    displayName: "Buy",
-    link: "https://www.snek.fun",
+    id: "Safari",
+    displayName: "Safari",
+    openFileId: "safari",
     iconLocation: require("../../resources/images/webp/safari.png"),
     enabled: true,
   },
@@ -67,11 +68,18 @@ export const dockConfig: DockItem[] = [
     enabled: true,
   },
   {
-    id: "whatsapp",
-    displayName: "WhatsApp",
-    openAppId: "whatsapp",
-    iconLocation: require("../../resources/images/webp/whatsapp_icon.png"),
-    enabled: false,
+    id: "Games",
+    displayName: "Apple Arcade",
+    openFolderId: "Games",
+    iconLocation: require("../../resources/images/webp/arcade.png"),
+    enabled: true,
+  },
+  {
+  id: "chrome",
+  displayName: "chrome",
+  openFileId: "chrome",
+  iconLocation: require("../../resources/images/webp/chrome.png"),
+  enabled: true,
   },
 ];
 
